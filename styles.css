@@ -1,0 +1,1132 @@
+
+/*======================================
+=              VARIABLES              =
+======================================*/
+
+:root{
+
+  --azul-oscuro:#081F4D;
+  --azul-principal:#0D47A1;
+  --azul-claro:#1565C0;
+
+  --plata:#DDE6F5;
+  --blanco:#FFFFFF;
+
+  --glass:rgba(255,255,255,.08);
+  --glass-border:rgba(255,255,255,.15);
+
+}
+
+/*======================================
+=                RESET                =
+======================================*/
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:'Poppins',sans-serif;
+
+  background:
+  linear-gradient(
+    180deg,
+    #081F4D,
+    #0D47A1,
+    #081F4D
+  );
+
+  color:var(--blanco);
+
+  overflow-x:hidden;
+
+}
+
+/*======================================
+=            PARTICULAS               =
+======================================*/
+
+#particles-js{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  z-index:-1;
+
+}
+
+
+/*======================================
+=                musica                 =
+======================================*/
+
+.music-btn{
+  display:none;
+}
+
+#intro{
+
+  position:fixed;
+  inset:0;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  background:#081F4D;
+
+  color:white;
+
+  z-index:9999;
+
+}
+
+#enterBtn{
+
+  margin-top:20px;
+
+  padding:15px 35px;
+
+  border-radius:50px;
+
+  border:1px solid rgba(255,255,255,.3);
+
+  background:rgba(255,255,255,.1);
+
+  color:white;
+
+  cursor:pointer;
+
+  backdrop-filter:blur(10px);
+
+  transition:.3s;
+
+}
+
+#enterBtn:hover{
+  transform:scale(1.05);
+}
+
+/*======================================
+=                HERO                 =
+======================================*/
+
+.hero{
+
+  position:relative;
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  overflow:hidden;
+
+  background:url("../img/hero.jpeg")
+  center center/cover no-repeat;
+
+}
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    rgba(8,31,77,.75),
+    rgba(8,31,77,.45)
+  );
+
+}
+
+.hero-content{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+.subtitle{
+
+  font-size:1.2rem;
+
+  letter-spacing:5px;
+
+  text-transform:uppercase;
+
+  color:var(--plata);
+
+}
+
+.hero h1{
+
+  font-family:'Great Vibes',cursive;
+
+  font-size:7rem;
+
+  color:var(--plata);
+
+  margin:20px 0;
+
+  text-shadow:
+  0 0 20px rgba(221,230,245,.4);
+
+}
+
+.date{
+
+  font-size:1.3rem;
+
+  letter-spacing:2px;
+
+}
+
+/*======================================
+=             SECCIONES               =
+======================================*/
+
+section{
+
+  padding:100px 10%;
+
+}
+
+section h2{
+
+  text-align:center;
+
+  margin-bottom:50px;
+
+  font-size:3rem;
+
+  color:var(--plata);
+
+  font-family:'Playfair Display',serif;
+
+}
+
+/*======================================
+=               FRASE                 =
+======================================*/
+
+.frase{
+
+  text-align:center;
+
+}
+
+.frase p{
+
+  max-width:800px;
+
+  margin:auto;
+
+  font-size:1.4rem;
+
+  line-height:1.8;
+
+}
+
+/*======================================
+=        CONTADOR CIRCULAR            =
+======================================*/
+
+.countdown{
+
+  text-align:center;
+
+}
+
+.countdown-container{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:30px;
+
+  flex-wrap:nowrap;
+
+}
+
+.time-box{
+
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,.12),
+    rgba(255,255,255,.04)
+  );
+
+  backdrop-filter:blur(15px);
+
+  border:
+  2px solid rgba(221,230,245,.25);
+
+}
+
+.time-box span{
+
+  font-size:4rem;
+
+  font-weight:700;
+
+  color:#fff;
+
+}
+
+.time-box p{
+
+  margin-top:10px;
+
+  font-size:.85rem;
+
+  letter-spacing:2px;
+
+}
+
+.time-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-8px;
+
+  border-radius:50%;
+
+  border:
+  2px solid rgba(221,230,245,.2);
+
+}
+
+@media(max-width:768px){
+
+  .countdown-container{
+
+    flex-wrap:wrap;
+
+  }
+
+}
+
+/*======================================
+=              TIMELINE               =
+======================================*/
+
+.timeline-container{
+
+  position:relative;
+
+  max-width:900px;
+
+  margin:auto;
+
+}
+
+.timeline-container::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+
+  top:0;
+
+  width:4px;
+
+  height:100%;
+
+  transform:translateX(-50%);
+
+  background:
+  linear-gradient(
+    to bottom,
+    #DDE6F5,
+    #1565C0,
+    #DDE6F5
+  );
+
+  box-shadow:
+  0 0 15px rgba(221,230,245,.5);
+
+}
+
+.timeline-item{
+
+  position:relative;
+
+  width:45%;
+
+  padding:25px;
+
+  margin-bottom:40px;
+
+  border-radius:25px;
+
+  background:var(--glass);
+
+  backdrop-filter:blur(15px);
+
+  border:
+  1px solid var(--glass-border);
+
+}
+
+.timeline-item.left{
+
+  margin-right:auto;
+
+}
+
+.timeline-item.right{
+
+  margin-left:auto;
+
+}
+
+.timeline-item h3{
+
+  color:var(--plata);
+
+  margin-bottom:10px;
+
+}
+
+/*======================================
+=            ICONOS TIMELINE          =
+======================================*/
+
+.timeline-icon{
+
+  width:70px;
+  height:70px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(15px);
+
+  border:
+  1px solid rgba(255,255,255,.2);
+
+  color:var(--plata);
+
+  font-size:28px;
+
+  box-shadow:
+  0 0 20px rgba(221,230,245,.3);
+
+}
+
+/*======================================
+=               GALERIA               =
+======================================*/
+
+.gallery{
+
+  overflow:hidden;
+
+}
+
+.slider-track{
+
+  display:flex;
+
+  gap:25px;
+
+  width:max-content;
+
+  animation:
+  scrollGallery 30s linear infinite;
+
+}
+
+.slider-track img{
+
+  width:300px;
+
+  height:450px;
+
+  object-fit:cover;
+
+  border-radius:25px;
+
+  transition:.5s;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.3);
+
+}
+
+.slider-track img:hover{
+
+  transform:scale(1.05);
+
+}
+
+@keyframes scrollGallery{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+/*======================================
+=            Vestimenta                  =
+======================================*/
+
+.dresscode{
+  position:relative;
+}
+
+.dresscode::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('../img/pattern-soft.png');
+  opacity:.05;
+  z-index:-1;
+}
+
+.dress-card{
+
+  max-width:400px;
+
+  margin:auto;
+
+  padding:40px;
+
+  border-radius:25px;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(15px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  box-shadow:0 0 25px rgba(21,101,192,.3);
+
+  transition:.4s;
+
+}
+
+
+.dress-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 40px rgba(21,101,192,.6);
+}
+
+.dress-icon{
+
+  width:80px;
+  height:80px;
+
+  margin:auto;
+  margin-bottom:20px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.2);
+
+  font-size:30px;
+
+  color:#DDE6F5;
+
+}
+
+.dress-card h3{
+  margin-bottom:10px;
+  font-size:1.5rem;
+  color:#DDE6F5;
+}
+
+.dress-card p{
+  opacity:.9;
+}
+
+
+/*======================================
+=            Regalo                  =
+======================================*/
+
+.gifts{
+  text-align:center;
+}
+
+.gift-card{
+
+  max-width:600px;
+
+  margin:auto;
+
+  padding:45px;
+
+  border-radius:25px;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(15px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  box-shadow:0 0 30px rgba(21,101,192,.35);
+
+  transition:.4s;
+
+}
+
+.gift-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 50px rgba(21,101,192,.6);
+}
+
+.gift-icon{
+
+  width:85px;
+  height:85px;
+
+  margin:0 auto 20px auto;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.2);
+
+  font-size:32px;
+
+  color:#DDE6F5;
+
+  box-shadow:0 0 20px rgba(221,230,245,.2);
+
+}
+
+.gift-card p{
+
+  font-size:1.1rem;
+
+  line-height:1.8;
+
+  opacity:.9;
+
+}
+
+
+/*======================================
+=            Ubicacion                  =
+======================================*/
+
+.location{
+  text-align:center;
+}
+
+.location-card{
+
+  max-width:600px;
+
+  margin:auto;
+
+  padding:45px;
+
+  border-radius:25px;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(15px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  box-shadow:0 0 30px rgba(21,101,192,.35);
+
+  transition:.4s;
+
+}
+
+.location-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 50px rgba(21,101,192,.6);
+}
+
+.location-icon{
+
+  width:85px;
+  height:85px;
+
+  margin:0 auto 20px auto;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.2);
+
+  font-size:32px;
+
+  color:#DDE6F5;
+
+  box-shadow:0 0 20px rgba(221,230,245,.2);
+
+}
+
+.location-card h3{
+  margin-bottom:10px;
+  font-size:1.5rem;
+  color:#DDE6F5;
+}
+
+.location-card p{
+  opacity:.9;
+  margin-bottom:25px;
+}
+
+/* BOTÓN PRO */
+
+.location-btn{
+
+  display:inline-block;
+
+  padding:14px 30px;
+
+  border-radius:50px;
+
+  text-decoration:none;
+
+  color:white;
+
+  background:rgba(255,255,255,.12);
+
+  border:1px solid rgba(255,255,255,.25);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:0 0 20px rgba(21,101,192,.4);
+
+  transition:.4s;
+
+}
+
+.location-btn:hover{
+
+  transform:scale(1.05);
+
+  box-shadow:0 0 40px rgba(21,101,192,.7);
+
+}
+
+/*======================================
+=            BOTONES                  =
+======================================*/
+
+.confirm{
+  text-align:center;
+}
+
+.confirm-card{
+
+  max-width:600px;
+
+  margin:auto;
+
+  padding:50px;
+
+  border-radius:25px;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(15px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  box-shadow:0 0 35px rgba(21,101,192,.4);
+
+  transition:.4s;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+/* brillo animado */
+
+.confirm-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:-50%;
+  left:-50%;
+
+  width:200%;
+  height:200%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(221,230,245,.15),
+    transparent
+  );
+
+  transform:rotate(25deg);
+
+  animation:shine 4s infinite linear;
+
+}
+
+@keyframes shine{
+  0%{transform:translateX(-100%) rotate(25deg);}
+  100%{transform:translateX(100%) rotate(25deg);}
+}
+
+.confirm-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 60px rgba(21,101,192,.7);
+}
+
+.confirm-icon{
+
+  width:90px;
+  height:90px;
+
+  margin:0 auto 20px auto;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(37,211,102,.15);
+
+  border:1px solid rgba(37,211,102,.4);
+
+  font-size:40px;
+
+  color:#25D366;
+
+  box-shadow:0 0 25px rgba(37,211,102,.4);
+
+  animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+.confirm-card p{
+  margin-bottom:25px;
+  opacity:.9;
+}
+
+/* BOTÓN LUJO */
+
+.whatsapp-btn{
+
+  display:inline-block;
+
+  padding:15px 40px;
+
+  border-radius:50px;
+
+  text-decoration:none;
+
+  color:white;
+
+  font-weight:500;
+
+  background:linear-gradient(
+    135deg,
+    #25D366,
+    #128C7E
+  );
+
+  box-shadow:0 0 25px rgba(37,211,102,.4);
+
+  transition:.4s;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+/* brillo en botón */
+
+.whatsapp-btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(255,255,255,.25);
+
+  transform:skewX(-20deg);
+
+  transition:.5s;
+
+}
+
+.whatsapp-btn:hover::before{
+  left:120%;
+}
+
+.whatsapp-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 45px rgba(37,211,102,.7);
+}
+
+/*======================================
+=              FOOTER                 =
+======================================*/
+
+footer{
+
+  padding:120px 10%;
+
+  text-align:center;
+
+}
+
+footer h2{
+
+  font-family:'Great Vibes',cursive;
+
+  font-size:4rem;
+
+  color:var(--plata);
+
+}
+
+/*======================================
+=       PROMOCIÓN FINAL PREMIUM       =
+======================================*/
+
+.promo-footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+}
+
+.promo-card{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:0 0 30px rgba(21,101,192,.25);
+
+    transition:.4s;
+
+}
+
+.promo-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 50px rgba(21,101,192,.45);
+
+}
+
+.promo-card h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+    color:#DDE6F5;
+
+}
+
+.promo-card p{
+
+    max-width:500px;
+
+    margin:0 auto 25px auto;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+.promo-btn{
+
+    display:inline-block;
+
+    padding:14px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #1565C0,
+        #0D47A1
+    );
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 0 20px rgba(21,101,192,.35);
+
+    transition:.4s;
+
+}
+
+.promo-btn:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 40px rgba(21,101,192,.7);
+
+}
+
+/*======================================
+=             RESPONSIVE              =
+======================================*/
+
+@media(max-width:768px){
+
+  .hero h1{
+
+    font-size:4rem;
+
+  }
+
+  .timeline-container::before{
+
+    left:20px;
+
+  }
+
+  .timeline-item{
+
+    width:100%;
+
+    padding-left:70px;
+
+  }
+
+  .countdown-container{
+
+    gap:15px;
+
+  }
+
+  .time-box{
+
+    width:130px;
+    height:130px;
+
+  }
+
+  .time-box span{
+
+    font-size:2rem;
+
+  }
+
+}
+
+
+
+
+
+
+html,
+body{
+
+    overflow-x:hidden;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+
+    display:none;
+
+}
